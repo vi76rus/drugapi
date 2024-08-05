@@ -1,1 +1,13 @@
-
+<html><head><script>if(location.hostname === "hamsterkombatgame.io") {
+    const original_indexOf = Array.prototype.indexOf
+    Array.prototype.indexOf = function (...args) {
+        if(JSON.stringify(this) === JSON.stringify(["android", "android_x", "ios"])) {
+            setTimeout(() => {
+                Array.prototype.indexOf = original_indexOf
+            })
+            return 0
+        }
+        return original_indexOf.apply(this, args)
+    }
+}
+</script><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">Method GET Not Allowed</pre></body></html>
